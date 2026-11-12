@@ -20,7 +20,7 @@ dependencies = [
 # The code is a set of scripts in code/, not an installable package.
 package = false
 
-# CUDA-enabled PyTorch wheels (CUDA 12.8 supports the RTX 2080 Ti / sm_75).
+# CUDA-enabled PyTorch wheels.
 # macOS has no CUDA builds, so it falls back to PyPI there.
 [tool.uv.sources]
 torch = [
