@@ -38,6 +38,15 @@ We welcome contributions to SuperRes. Please [raise an issue](https://github.com
 
 1. Install [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 2. [Clone or Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) the repository.
+3. Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and, inside the repository, run
+
+```
+uv sync
+```
+
+This creates a `.venv` with all dependencies (CUDA-enabled PyTorch on Windows and Linux). Either activate it (`source .venv/bin/activate`, or `.venv\Scripts\activate` on Windows) or prefix the commands below with `uv run`, e.g. `uv run python code/Architecture.py ...`.
+
+4. Training logs to [Weights & Biases](https://wandb.ai). Run `uv run wandb login` once; runs are logged to your default entity (set `WANDB_ENTITY` to use a different one).
 
 ### Training
 

@@ -1,4 +1,4 @@
-from tifffile import imread, imsave
+from tifffile import imread
 import numpy as np
 import random
 import os

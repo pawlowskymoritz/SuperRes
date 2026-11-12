@@ -133,8 +133,8 @@ def save_differences_and_metrics(input_to_g, output_of_g, save_dir, filename,
 if __name__ == '__main__':
 
     # 1. Start a new run
-    wandb.init(project='SuperRes', config=args, name=progress_dir,
-               entity='tldr-group')
+    # Logs to your default W&B entity; set WANDB_ENTITY to choose another
+    wandb.init(project='SuperRes', config=args, name=progress_dir)
 
     # The batch makers for D and G:
     D_BMs, D_nets, D_optimisers = Networks. \

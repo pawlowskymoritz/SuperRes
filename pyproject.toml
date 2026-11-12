@@ -1,0 +1,32 @@
+[project]
+name = "superres"
+version = "0.1.0"
+description = "Fusion of complementary 2D and 3D mesostructural datasets using GANs"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "torch>=2.4",
+    "numpy",
+    "matplotlib",
+    "pillow",
+    "tifffile",
+    # ImageTools.py uses metrics.surface_area, removed in taufactor 1.2
+    "taufactor>=1.1,<1.2",
+    "wandb",
+]
+
+[tool.uv]
+# The code is a set of scripts in code/, not an installable package.
+package = false
+
+# CUDA-enabled PyTorch wheels.
+# macOS has no CUDA builds, so it falls back to PyPI there.
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu128", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
