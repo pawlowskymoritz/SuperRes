@@ -9,8 +9,7 @@ dependencies = [
     "numpy",
     "matplotlib",
     "pillow",
-    # BatchMaker.py imports `imsave`, which was removed from tifffile in 2024
-    "tifffile<2024",
+    "tifffile",
     # ImageTools.py uses metrics.surface_area, removed in taufactor 1.2
     "taufactor>=1.1,<1.2",
     "wandb",

@@ -1538,7 +1538,9 @@ dependencies = [
     { name = "pillow", version = "12.3.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "pillow", version = "13.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "taufactor" },
-    { name = "tifffile" },
+    { name = "tifffile", version = "2025.5.10", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "tifffile", version = "2026.3.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
+    { name = "tifffile", version = "2026.11.8", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
     { name = "torch", version = "2.11.0+cu128", source = { registry = "https://download.pytorch.org/whl/cu128" }, marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
     { name = "torch", version = "2.14.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11' and sys_platform != 'linux' and sys_platform != 'win32'" },
     { name = "torch", version = "2.15.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' and sys_platform != 'linux' and sys_platform != 'win32'" },
@@ -1551,7 +1553,7 @@ requires-dist = [
     { name = "numpy" },
     { name = "pillow" },
     { name = "taufactor", specifier = ">=1.1,<1.2" },
-    { name = "tifffile", specifier = "<2024" },
+    { name = "tifffile" },
     { name = "torch", marker = "sys_platform != 'linux' and sys_platform != 'win32'", specifier = ">=2.4" },
     { name = "torch", marker = "sys_platform == 'linux' or sys_platform == 'win32'", specifier = ">=2.4", index = "https://download.pytorch.org/whl/cu128" },
     { name = "wandb" },
@@ -1580,7 +1582,9 @@ dependencies = [
     { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
     { name = "numpy", version = "2.5.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
-    { name = "tifffile" },
+    { name = "tifffile", version = "2025.5.10", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "tifffile", version = "2026.3.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
+    { name = "tifffile", version = "2026.11.8", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/38/21/1e767d7c73fa7134eb780ea48d47611b56ac3d73bf2b6b6f793050b8bb56/taufactor-1.1.0.tar.gz", hash = "sha256:65a4de781c4e0523bfab6966f498f8d8205ec384b641115e7de2b8ec8afae61c", size = 575138, upload-time = "2023-07-24T09:13:42.152Z" }
 wheels = [
@@ -1589,16 +1593,50 @@ wheels = [
 
 [[package]]
 name = "tifffile"
-version = "2023.12.9"
+version = "2025.5.10"
 source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
-    { name = "numpy", version = "2.5.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
+resolution-markers = [
+    "(python_full_version < '3.11' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform == 'win32')",
+    "python_full_version < '3.11' and sys_platform != 'linux' and sys_platform != 'win32'",
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f8/a4/6c0eadea1ccfcda27e6cce400c366098b5b082138a073f4252fe399f4148/tifffile-2023.12.9.tar.gz", hash = "sha256:9dd1da91180a6453018a241ff219e1905f169384355cd89c9ef4034c1b46cdb8", size = 353467, upload-time = "2023-12-09T20:46:29.203Z" }
+dependencies = [
+    { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" } },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/44/d0/18fed0fc0916578a4463f775b0fbd9c5fed2392152d039df2fb533bfdd5d/tifffile-2025.5.10.tar.gz", hash = "sha256:018335d34283aa3fd8c263bae5c3c2b661ebc45548fde31504016fcae7bf1103", size = 365290, upload-time = "2025-05-10T19:22:34.386Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/54/a4/569fc717831969cf48bced350bdaf070cdeab06918d179429899e144358d/tifffile-2023.12.9-py3-none-any.whl", hash = "sha256:9b066e4b1a900891ea42ffd33dab8ba34c537935618b9893ddef42d7d422692f", size = 223627, upload-time = "2023-12-09T20:46:26.569Z" },
+    { url = "https://files.pythonhosted.org/packages/5d/06/bd0a6097da704a7a7c34a94cfd771c3ea3c2f405dd214e790d22c93f6be1/tifffile-2025.5.10-py3-none-any.whl", hash = "sha256:e37147123c0542d67bc37ba5cdd67e12ea6fbe6e86c52bee037a9eb6a064e5ad", size = 226533, upload-time = "2025-05-10T19:22:27.279Z" },
+]
+
+[[package]]
+name = "tifffile"
+version = "2026.3.3"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version == '3.11.*' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform == 'win32')",
+    "python_full_version == '3.11.*' and sys_platform != 'linux' and sys_platform != 'win32'",
+]
+dependencies = [
+    { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" } },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c5/cb/2f6d79c7576e22c116352a801f4c3c8ace5957e9aced862012430b62e14f/tifffile-2026.3.3.tar.gz", hash = "sha256:d9a1266bed6f2ee1dd0abde2018a38b4f8b2935cb843df381d70ac4eac5458b7", size = 388745, upload-time = "2026-03-03T19:14:38.134Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1a/e4/e804505f87627cd8cdae9c010c47c4485fd8c1ce31a7dd0ab7fcc4707377/tifffile-2026.3.3-py3-none-any.whl", hash = "sha256:e8be15c94273113d31ecb7aa3a39822189dd11c4967e3cc88c178f1ad2fd1170", size = 243960, upload-time = "2026-03-03T19:14:35.808Z" },
+]
+
+[[package]]
+name = "tifffile"
+version = "2026.11.8"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.12' and sys_platform == 'linux') or (python_full_version >= '3.12' and sys_platform == 'win32')",
+    "python_full_version >= '3.12' and sys_platform != 'linux' and sys_platform != 'win32'",
+]
+dependencies = [
+    { name = "numpy", version = "2.5.4", source = { registry = "https://pypi.org/simple" } },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c2/48/f44d2dffb83bd0f37bbe193d61e196c23343eca35f4f9b602b311f4a61ad/tifffile-2026.11.8.tar.gz", hash = "sha256:2dd916274365f50d1730cca9b37ab91c112bf53fa22305c68dc940bcf4caac4d", size = 462217, upload-time = "2026-11-08T18:25:09.728Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/13/2e/2e2488584cabde1b60ddf2731165b05c892ea07c29568bca50e638e7ce9b/tifffile-2026.11.8-py3-none-any.whl", hash = "sha256:bb41732b357a7fa3077db439961ea1ec3a88d2fda4b45fd3ea9f7786690f6049", size = 278909, upload-time = "2026-11-08T18:25:08.276Z" },
 ]
 
 [[package]]
